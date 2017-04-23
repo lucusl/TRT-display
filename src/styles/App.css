@@ -1,0 +1,47 @@
+body {
+}
+
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+
+.slideIn {
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
+.slideOut {
+    animation: 1s ease-out 0s 1 slideOutFromLeft;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes slideInFromLeft {
+  0% {transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+  }
+
+ @keyframes slideOutFromLeft {
+  100% {transform: translateX(-100%); }
+  0% { transform: translateX(0); }
+  } 
