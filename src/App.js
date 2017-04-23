@@ -72,8 +72,9 @@ constructor(props){
                 }
                 } />
             </Switch>
-           {activeState === 2 && <p className= 'slideIn'>State is {activeState}</p>}
-          <Clock/>
+           {/*{activeState === 2 && <p className= 'slideIn'>State is {activeState}</p>*/}
+          <Clock location='America/Los_Angeles'/>
+          <Clock location='Europe/Warsaw'/>
       </div>
      </Router> 
  

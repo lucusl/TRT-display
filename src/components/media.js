@@ -7,7 +7,9 @@ var api = require('../utils/api')
 
 function Games(props){
 	return (
-		<p>{props.teamName}</p>
+		<div>
+			<p>{props.games[props.gameId].DateOfGame}</p>
+		</div>
 		)
 }
 
@@ -17,12 +19,15 @@ constructor(props){
 	super(props);
 
 	this.state = {
-		gameData: null,
-		teamOne: null,
-		teamTwo: null
-	}
+		gamesInfo: null,
+		numOfgames : 1,
+		isGameDay: false
+
+
+	};
 
 	this.getGameData = this.getGameData.bind(this);
+
 }
 
 
@@ -31,24 +36,47 @@ componentDidMount() {
 	}
 
 getGameData(){
-		api.fetchTodaysGames().then( function(gameData){
-			this.setState(function () {
-				console.log(gameData);
+		this.setState( function (){
+			return {
+				gamesInfo: null,
+				numOfgames: null,
+				isGameDay: false
+			}
+		})
+
+		api.fetchTodaysGames()
+		.then(function(gameData){
+			this.setState( function () {
+					console.log(gameData);
+					let gameDay = !gameDay;
+					console.log(gameDay);
 					return {
-						gameData: gameData,
-						teamOne: gameData.teams[0]
+						gamesInfo: gameData,
+						numOfgames : gameData.length,
+						isGameDay: gameDay
+
 					}
 				})
 		}.bind(this));
 }
+
+
   render(){
-  
+
   		return(
   			<div className='container'>
-	  			<Sass/>
 	  			<h2 className= 'intro'> Welcome <br/> to Task retail technology </h2>
 	  			<OfficeTimes location= 'Poland'/>
-	  			<Games teamName='tets'/>
+
+
+	  			{!this.state.isGameDay ? <p>NOT GAME DAY</p> 
+	  				: <div>
+	  			{!this.state.gamesInfo ? <p>LOADING MUTHA FUK**A </p>	
+					: <Games games= {this.state.gamesInfo} gameId = {0} />
+				}
+				</div>}
+				<Sass/>
+
   			</div>
   			)
  		 }

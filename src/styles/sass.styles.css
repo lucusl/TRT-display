@@ -1,0 +1,30 @@
+.sass-container{
+	display: flex;
+	width: 20%;
+	justify-content: flex-end;
+	flex-direction: row;
+}
+
+.sass-level{
+	align-self:flex-end;
+	-webkit-transition:  height 4s; /* For Safari 3.1 to 6.0 */
+    transition: height 4s;
+    margin-bottom: 0;
+}
+
+.sass-bar{
+	width: 40px;
+	background-color: red;
+    height: 100%;
+	align-self:flex-end;
+
+
+}
+
+.grad-bg {
+    background: #a00e12; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#a00e12, #3f080); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#a00e12, #3f080); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#a00e12, #3f080); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#a00e12, #3f080b); /* Standard syntax */
+}
