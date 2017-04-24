@@ -13,6 +13,7 @@ class App extends React.Component{
 			<div>
 				<TestComp simple='test' testData = { this.props.testData } />
 				<TestSearch onTermChange={this.props.actions.testAction} />
+				<p></p>
 			</div>
 			)
 	}
@@ -25,7 +26,7 @@ class App extends React.Component{
 
 function mapStateToProps(state){
 	return {
-		testData: state.testData,
+		testData: state.testData.term,
 		nbaData: state.nbaData.data
 			};
 }

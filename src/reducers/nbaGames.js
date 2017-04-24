@@ -1,7 +1,8 @@
 import { GET_NBA_GAMES } from '../actions';
 
 const initialState = {
-	data: ['test']
+	data: [],
+
 };
 
 
@@ -10,7 +11,7 @@ export default function nbaGames(state = initialState, action) {
 		case GET_NBA_GAMES:
 			console.log('test')
 			return {
-				...state, data: action.payload.body.data
+				...state, data: JSON.parse(action.payload.body)
 			};
 		default:
 			return state;

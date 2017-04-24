@@ -10,10 +10,11 @@ const NBA_API_URL = 'http://integrations.xchangefusion.com/api/nba/'
 
 
 export function testAction (term = null) {
+
 	console.log(term);
 	return {
 		type : TEST_ACTION,
-		term
+		term : term
 	}
 }
 
